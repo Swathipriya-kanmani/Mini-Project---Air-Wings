@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AirlinesProject.Models.FlightBooking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Book Now</a>
+</p>
+<h1>Hello @ViewBag.Myname</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCusCnic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCusCnic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BookId">AirplaneDetails</a> |
+                <a asp-action="Delete" asp-route-id="@item.BookId">Cancel</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

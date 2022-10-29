@@ -1,0 +1,65 @@
+﻿@model AirlinesProject.Models.FlightBooking
+
+@{
+    ViewData["Title"] = "BookNow";
+}
+
+<h1>BookNow</h1>
+
+<h4>FlightBooking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="payment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookId" class="control-label"></label>
+                <input asp-for="BookId" class="form-control" required />
+                <span asp-validation-for="BookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusName" class="control-label"></label>
+                <input asp-for="BookCusName" class="form-control" required />
+                <span asp-validation-for="BookCusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusAddress" class="control-label"></label>
+                <input asp-for="BookCusAddress" class="form-control" required />
+                <span asp-validation-for="BookCusAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusEmail" class="control-label"></label>
+                <input asp-for="BookCusEmail" class="form-control" required />
+                <span asp-validation-for="BookCusEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusSeats" class="control-label"></label>
+                <input asp-for="BookCusSeats" class="form-control" required />
+                <span asp-validation-for="BookCusSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusPhoneNumber" class="control-label"></label>
+                <input asp-for="BookCusPhoneNumber" class="form-control" required />
+                <span asp-validation-for="BookCusPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCusCnic" class="control-label"></label>
+                <input asp-for="BookCusCnic" class="form-control" required />
+                <span asp-validation-for="BookCusCnic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReservationId" class="control-label"></label>
+                <input asp-for="ReservationId" class="form-control" required />
+                <span asp-validation-for="ReservationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Payment" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details">Back to Flight Details</a>
+</div>
+
